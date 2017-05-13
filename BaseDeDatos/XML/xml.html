@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <style type="text/css">
+    html {padding:0px; margin:0px;background-image:url("http://www.papillonweb.fr/wp-content/uploads/2014/05/1111075__matrix-blue_p.jpg"); background-repeat:repeat; }
+    body { margin:0 auto; padding:2% 0 0 2%; width:50%; font:normal 12px/2.0em Sans-Serif;}
+    #page { padding:0px; margin:0px;}
+    #page { border-style: solid; -moz-border-radius:60px;
+        -webkit-border-radius:60px;
+        border-radius:60px;background:#E6E6E6;-moz-box-shadow: 0px 1px 100px 0px #000069;
+        -webkit-box-shadow: 0px 1px 100px 0px #000069;
+    box-shadow: 0px 1px 100px 0px #000069; opacity: .95}
+    /* Bloque de arriba */
+    .block_sup { margin:5% 0 0 0; background:#000069; padding:20px; height:80px;}
+    .block_sup-inner { margin:auto;}
+    .block_sup-inner h2 { margin:1% 0 0 28%; color:white; font-size:40px}
+    .block_sup-inner img { margin:0; float:left;}
+
+    /* Datos y sidebar */
+    #content #contentbar { margin:0 0 0 12%; padding:0;}
+    #content #contentbar a { margin:5% 0 8% 35%; padding:6px 15px 8px 15px;}
+    #content #contentbar h3 {margin:2% 0 0 0; font-size:20px; color:black;}
+    #content #contentbar form ul input {margin:0 0 0 30%; padding:6px 15px 8px 20px; color:white;}
+    #content #contentbar form input {margin:0 0 0 26%; padding:6px 15px 8px 15px; color:black;} 
+
+    /* Clear both sides to assist with div alignment  */
+    .clr { clear:both; padding:0; margin:0; width:100%; font-size:0px; line-height:0px;}
+    /*Botones*/
+    .action {
+  -moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
+  -webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
+  background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+  background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+  background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+  background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+  background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
+  background-color:#7892c2;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  border:1px solid #4e6096;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:19px;
+  padding:12px 37px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #283966;
+}
+.action:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
+  background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+  background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+  background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+  background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+  background-color:#476e9e;
+}
+.action:active {
+  position:relative;
+  top:1px;
+}
+
+    </style>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>XML</title>
+    </head>
+
+    <body>
+        <div id="page">
+            <br><div class="block_sup">
+                    <div class="block_sup-inner">
+                    <img src="http://www.ciberaula.com/fotos/curso/xml/temario/xml.png" width="80" height="80"/>
+                    <h2>Consultas XML</h2>
+                    </div>
+                </div>
+
+            <div id="content">
+                    <main id="contentbar">
+                            <h3 style='margin-left: 1em'>Listados de alumnos cuyo nombre contiene Perez</h3>
+                            <a href="xpath1.php" class="action">XPATH</a>
+                            <br><br>
+                            <h3 style='margin-left: 2em'>Tutores con mas de tres alumnos a cargo</h3>
+                            <a href="xpath3.php" class="action">XPATH</a>
+                            <br><br>
+                            <h3 style='margin-left: 2em'>Cursos con cantidad de alumnos mayores a </h3>
+                            <form name="form1" id=form1 action="xpath2.php" method="get">
+                            <input type="number" name="cantidad" value="">
+                            <ul>
+                            <input type="submit" value="XPATH" class="action">
+                            </ul>
+                            </form>
+                    </main>
+                    <div class="clr"></div>
+                </div>
+            </div>
+    </body>
+</html>

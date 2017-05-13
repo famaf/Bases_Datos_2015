@@ -1,0 +1,76 @@
+select count(*) as Cantidad_Cursos
+from( select Grado, Seccion
+      from Curso
+      group by Grado, Seccion) as tabla1
+
+
+----------------------------------------
+
+PASO 1
+
+select Grado, Seccion, Nombre
+from Oficios of inner join Oficios_Tutores ot on of.ID_Oficio = ot.ID_Oficio
+                inner join Grupo_Familiar gf on ot.ID_Tutor = gf.ID_Tutor
+                inner join Cursando cur on gf.ID_Alumno = cur.ID_Alumno
+where Año = 2015
+group by Grado, Seccion, Nombre
+
+
+PASO 2
+
+select Nombre, count(Nombre) as Apariciones
+from (select Grado, Seccion, Nombre
+    from Oficios of inner join Oficios_Tutores ot on of.ID_Oficio = ot.ID_Oficio
+              inner join Grupo_Familiar gf on ot.ID_Tutor = gf.ID_Tutor
+              inner join Cursando cur on gf.ID_Alumno = cur.ID_Alumno
+    where Año = 2015
+    group by Grado, Seccion, Nombre) as tabla2
+    group by Nombre
+
+
+-------------------
+
+select Nombre as Nombre_Oficio
+from (select count(*) as Cantidad_Cursos
+      from (select Grado, Seccion
+            from Curso
+            group by Grado, Seccion) as tabla1
+     ) as t1
+     inner join
+     (select Nombre, count(Nombre) as Apariciones
+      from (select Grado, Seccion, Nombre
+            from Oficios of inner join Oficios_Tutores ot on of.ID_Oficio = ot.ID_Oficio
+                      inner join Grupo_Familiar gf on ot.ID_Tutor = gf.ID_Tutor
+                      inner join Cursando cur on gf.ID_Alumno = cur.ID_Alumno
+            where Año = 2015
+            group by Grado, Seccion, Nombre) as tabla2
+            group by Nombre
+     ) as t2
+     on t1.Cantidad_Cursos = t2.Apariciones
+     
+     
+     
+
+
+
+
+
+
+
+
+
+
+
+select tabla2.Nro_GrupoFamiliar, Cantidad_Hijos
+from ( select Nro_GrupoFamiliar, count(distinct ID_Alumno) as Cantidad_Hijos
+       from (select Nro_GrupoFamiliar, gf.ID_Alumno
+             from Cursando cur inner join Grupo_Familiar gf
+             where Estado = 'Cursando'
+            ) as tabla1
+       group by Nro_GrupoFamiliar) as tabla2
+     inner join (select Nro_GrupoFamiliar, gf.ID_Alumno
+                 from Cursando cur inner join Grupo_Familiar gf
+                 where Estado = 'Cursando') as tt
+     on tabla2.Nro_GrupoFamiliar = tt.Nro_GrupoFamiliar
+
+

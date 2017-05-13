@@ -1,0 +1,20 @@
+<!DOCTYPE Escuela [
+    <!ELEMENT Escuela (Tutores, Cursos)>
+    <!ELEMENT Tutores (Tutor+)>
+    <!ELEMENT Tutor (ID_Tutor, Nombre_Tutor, Apellido_Tutor, Alumnos)>
+    <!ELEMENT ID_Tutor (#PCDATA)>
+    <!ELEMENT Nombre_Tutor (#PCDATA)>
+    <!ELEMENT Apellido_Tutor (#PCDATA)>
+    <!ELEMENT Alumnos (Alumno+)>
+    <!ELEMENT Alumno (ID_Alumno, Nombre_Alumno, Apellido_Alumno)>
+    <!ELEMENT ID_Alumno (#PCDATA)>
+    <!ELEMENT Nombre_Alumno (#PCDATA)>
+    <!ELEMENT Apellido_Alumno (#PCDATA)>
+    <!ELEMENT Cursos (Curso+)>
+    <!ELEMENT Curso (Anio, Grado, Seccion, Turno, Cantidad_de_Alumnos)>
+    <!ELEMENT Anio (#PCDATA)>
+    <!ELEMENT Grado (#PCDATA)>
+    <!ELEMENT Seccion (#PCDATA)>
+    <!ELEMENT Turno (#PCDATA)>
+    <!ELEMENT Cantidad_de_Alumnos (#PCDATA)>
+]>

@@ -1,0 +1,44 @@
+delimiter //
+
+create procedure inscripcion_automatica(in este_anio int)
+begin
+
+    declare id_student int;
+	declare year int;
+	declare grade int;
+    declare state varchar(16);
+	declare secc varchar(16);
+	declare turn varchar(16);
+    
+    declare cur1 cursor for select ID_Alumno, Grado, Seccion, Turno, Estado, Año from Cursando where Estado = 'finalizado' and Año = este_anio;
+
+	declare continue handler for not found set @done = true;
+    
+    open cur1;
+    
+    read_loop: loop
+        fetch cur1 into id_student, grade, secc, turn, state, year;
+    
+		if @done then
+			leave read_loop;
+		end if;
+
+        if grade = 1 then
+            insert into Cursando values (id_student, grade + 1, secc, turn, 'cursando', year + 1);
+        elseif grade = 2 then
+            insert into Cursando values (id_student, grade + 1, secc, turn, 'cursando', year + 1);
+        elseif grade = 3 then
+            insert into Cursando values (id_student, grade + 1, secc, turn, 'cursando', year + 1);
+        elseif grade = 4 then
+            insert into Cursando values (id_student, grade + 1, secc, turn, 'cursando', year + 1);
+        elseif grade = 5 then
+            insert into Cursando values (id_student, grade + 1, secc, turn, 'cursando', year + 1);
+
+		end if;
+      end loop read_loop;
+
+    close cur1;
+
+end //
+
+delimiter ;

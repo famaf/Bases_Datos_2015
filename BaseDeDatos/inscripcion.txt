@@ -1,0 +1,13 @@
+create procedure insert_autom(IN año INT)
+comment 'procedimiento que inscribe automaticamente a un alumno al siquiente año si tiene la marca de paso'
+begin
+if exists (select cur.ID_Alumno from Cursando as cur 
+           where cur.Estado = 'finalizado' and cur.Año = año - 1 and cur.Grado < 6) then
+insert into Cursando (ID_Alumno, Grado, Seccion, Turno, Estado, Año)
+values(cur.ID_Alumno, Grado + 1, cur.Seccion, cur.Turno, 'cursando', año);
+end if;
+end;
+
+
+
+http://www.unc.edu.ar/vidaestudiantil/novedades/boletin/2014/octubre/becas-academicas-2015

@@ -1,0 +1,10 @@
+update Empleado r
+inner join
+(select ID_Empleado,sum(total) as mitotal from
+  (SELECT  ID_Empleado,sum(Monto) as total FROM Movimientos m inner join Balance b on m.ID_Movimiento=b.ID_Movimiento
+    group by ID_Empleado
+    union
+    select ID_Empleado,sum(Importe) as total from Pagos
+    group by ID_Empleado) mitabla
+group by ID_Empleado) bb on bb.ID_Empleado=r.ID_Empleado
+set r.saldo=bb.mitotal

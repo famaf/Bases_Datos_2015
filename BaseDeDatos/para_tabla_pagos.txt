@@ -1,0 +1,2 @@
+insert into Pagos (`ID_Empleado`,`Descuento`,`ID_Alumno`,`Mes`,`Año`,`Fecha_Pago`)
+SELECT FLOOR(1 + RAND()*10) as ID_Empleado,10*FLOOR(  RAND()*4) as Descuento,`ID_Alumno`,mes,año,NOW() - INTERVAL FLOOR(RAND() * 800) DAY as Fecha_Pago FROM meses,años,Alumnos

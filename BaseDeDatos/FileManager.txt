@@ -1,0 +1,29 @@
+FILE MANAGER
+
+institutodubois.com.ar/fm
+
+usu: basededatos
+pass: filemanager
+
+username: grupo10
+passname: JiGrupo10
+
+
+#despues de subir archivos:
+
+institutodubois.com.ar/fm/grupo10/ARCHIVO.EXTENSION   # view file in browser
+
+--------------------------------------------------------------------------------
+
+ARCHIVO PHP
+
+servidor: localhost
+usuario: ddubois_grupo10
+clave: ******
+nombrebd: ddubois_grupo10
+
+
+
+mdl_user CAMBIAR POR LA TABLA QUE QUIERA, POR EJEMPLO: alumno
+
+
